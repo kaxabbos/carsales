@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html class="h-100" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>О нас</title>
+    <link rel="stylesheet" href="/static/about_style.css">
+</head>
+
+<head th:insert="blocks\head :: head"></head>
+
+<body class="d-flex flex-column h-100" style="background: url(&quot;/img/def/bg.jpg&quot;) top / cover;">
+
+<header th:insert="blocks\header :: header" class="sticky-top" role="navigation"></header>
+
+<hr class="clear">
+
+<main class="container flex-shrink-0 bg-light">
+    <div class="row">
+        <div class="col-lg-12 mt-3">
+            <iframe width="100%" height="750" src="https://www.youtube.com/embed/TswTFljcHB8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="col-lg-12 mb-5">
+            <div class="pt-5 px-5 mx-auto">
+                <center><p>CarSales</p></center>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repellendus
+                    obcaecati tempora, placeat tenetur accusamus minima animi mollitia minus dolores cupiditate,
+                    provident dolorum ipsa impedit repellat illo, nesciunt, nostrum repudiandae!</p>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repellendus
+                    obcaecati tempora, placeat tenetur accusamus minima animi mollitia minus dolores cupiditate,
+                    provident dolorum ipsa impedit repellat illo, nesciunt, nostrum repudiandae!</p>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repellendus
+                    obcaecati tempora, placeat tenetur accusamus minima animi mollitia minus dolores cupiditate,
+                    provident dolorum ipsa impedit repellat illo, nesciunt, nostrum repudiandae!</p>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repellendus
+                    obcaecati tempora, placeat tenetur accusamus minima animi mollitia minus dolores cupiditate,
+                    provident dolorum ipsa impedit repellat illo, nesciunt, nostrum repudiandae!</p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <iframe allowfullscreen="" frameborder="0" loading="lazy"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCGz6HJDVY9fht_jGVCprEpRCwZ8PSsqhc&amp;q=Minsk&amp;zoom=11"
+                    width="100%" height="500px"
+                    style="box-shadow: 0 0 6px;border-radius: 5px;border: 1px solid rgb(255,255,255);width: 100%;margin-top: 15px;height: 500px;"></iframe>
+        </div>
+    </div>
+    <div class="pt-5"></div>
+</main>
+
+<hr class="clear">
+
+<footer th:insert="blocks/footer :: footer" class="footer mt-auto py-1" style="background: #248a9f"></footer>
+
+</body>
+
+</html>

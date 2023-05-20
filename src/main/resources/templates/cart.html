@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html class="h-100" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Мои машины</title>
+    <link rel="stylesheet" href="/static/cart_style.css">
+</head>
+
+<head th:insert="blocks\head :: head"></head>
+
+<body class="d-flex flex-column h-100" style="background: url(&quot;/img/def/bg.jpg&quot;) top / cover;">
+
+<header th:insert="blocks\header :: header" class="sticky-top" role="navigation"></header>
+
+<hr class="clear">
+
+<main class="container-lg flex-shrink-0 bg-light">
+    <div class="row">
+        <div style="text-align: center;"><h1>Мои машины</h1></div>
+        <div th:each="c : ${user.getCarts()}" class="col-lg-6 mt-3">
+            <div class="alert alert-primary">
+                <div class="row">
+                    <div class="col-lg-4 poster">
+                        <a th:href="'/cars/' + ${c.car.id}">
+                            <img th:src="'/img/' + ${c.car.poster}">
+                        </a>
+                    </div>
+                    <div class="col-lg">
+                        <h4 th:text="${c.car.name}" class="card-title pricing-card-title mx-3 text-break"></h4>
+                        <ul class="list-unstyled mt-3 mb-3 mx-3">
+                            <li><b>Марка:</b> <span th:text="${c.car.brand}"></span></li>
+                            <li><b>Дата производства:</b> <span th:text="${c.car.date}"></span></li>
+                            <li><b>Сумма:</b> <span th:text="${c.sum}"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-5"></div>
+</main>
+
+<hr class="clear">
+
+<footer th:insert="blocks/footer :: footer" class="footer mt-auto py-1" style="background: #248a9f"></footer>
+
+
+</body>
+
+</html>

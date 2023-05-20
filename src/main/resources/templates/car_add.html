@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html class="h-100" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Добавление</title>
+    <link rel="stylesheet" href="/car_add_edit_style.css">
+</head>
+
+<head th:insert="blocks\head :: head"></head>
+
+<body class="d-flex flex-column h-100" style="background: url(&quot;/img/def/bg.jpg&quot;) top / cover;">
+
+<header th:insert="blocks\header :: header" class="sticky-top" role="navigation"></header>
+
+<hr class="clear">
+
+<main class="container-lg flex-shrink-0 bg-light">
+    <form action="/cars/add" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-lg-12 input-group flex-nowrap size-150">
+                <label for="name" class="input-group-text">Название</label>
+                <input id="name" name="name" type="text" class="form-control"
+                       required>
+            </div>
+            <div class="col-lg-6 size-150">
+                <div class=" input-group">
+                    <label for="origin" class="input-group-text">Страна производства</label>
+                    <input id="origin" name="origin" type="text" class="form-control"
+                           required>
+                </div>
+                <div class="input-group">
+                    <label for="dealerships" class="input-group-text">Автосалон</label>
+                    <input id="dealerships" type="text" class="form-control" th:value="${dealership.name}" required
+                           readonly>
+                </div>
+                <div class="input-group">
+                    <label for="date" class="input-group-text">Дата производства</label>
+                    <input id="date" name="date" type="date" class="form-control"
+                           required>
+                </div>
+                <div class="input-group">
+                    <label for="poster" class="input-group-text">Фото</label>
+                    <input id="poster" name="poster" type="file" class="form-control"
+                           accept=".jpg,.jpeg,.png" required>
+                </div>
+                <div class="input-group">
+                    <label for="screenshots" class="input-group-text">Фото салона</label>
+                    <input id="screenshots" name="screenshots" type="file" class="form-control"
+                           accept=".jpg,.jpeg,.png" required multiple>
+                </div>
+            </div>
+            <div class="col-lg-6 size-150">
+                <div class=" input-group">
+                    <label for="year" class="input-group-text">Год выпуска</label>
+                    <input id="year" name="year" type="number" step="1"
+                           class="form-control" required>
+                </div>
+                <div class="input-group">
+                    <label for="price" class="input-group-text">Цена</label>
+                    <input id="price" name="price" type="number" step="1"
+                           class="form-control" required>
+                </div>
+                <div class="input-group">
+                    <label for="weight" class="input-group-text">В автосалоне</label>
+                    <input id="weight" name="count" type="number" step="1" class="form-control"
+                           required>
+                </div>
+                <div class="input-group" hidden>
+                    <label for="dealershipId" class="input-group-text"></label>
+                    <input id="dealershipId" name="dealershipId" type="number" class="form-control"
+                           th:value="${dealership.id}" required>
+                </div>
+                <div class="input-group">
+                    <label for="brand" class="input-group-text">Марка</label>
+                    <select id="brand" name="brand" class="form-control">
+                        <option th:each="g : ${brands}" th:value="${g}" th:label="${g}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <h4><label for="description">Описание</label></h4>
+                <input type="text" class="form-control" name="description" id="description" required>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Добавить</button>
+        <button class="btn btn-lg btn-primary" type="reset">Очистить</button>
+        <a class="btn btn-lg btn-primary" href="/catalog/all">Отмена</a>
+    </form>
+    <div class="pt-3"></div>
+</main>
+
+<hr class="clear">
+
+<footer th:insert="blocks/footer :: footer" class="footer mt-auto py-1" style="background: #248a9f"></footer>
+
+</body>
+
+</html>
